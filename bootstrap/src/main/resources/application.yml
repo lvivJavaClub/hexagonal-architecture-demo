@@ -1,0 +1,38 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: hexagonal-architecture-demo
+  datasource:
+    url: jdbc:postgresql://localhost:5432/userservice
+    username: root
+    password: password
+    driver-class-name: org.postgresql.Driver
+  data:
+    mongodb:
+      uri: mongodb://admin:password@localhost:27017/mydatabase?authSource=admin
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+  flyway:
+    enabled: true
+    url: jdbc:postgresql://localhost:5432/userservice
+    user: root
+    password: password
+    driver-class-name: org.postgresql.Driver
+    baseline-on-migrate: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health"
+  health:
+    defaults:
+      enabled: true
+    flyway:
+      enabled: true

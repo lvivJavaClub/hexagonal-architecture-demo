@@ -1,0 +1,5 @@
+### Get a user
+@userId = 1
+
+GET http://localhost:8081/api/users/{{userId}}
+Accept: application/json

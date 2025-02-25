@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/userservice
+    username: root
+    password: password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+  flyway:
+    enabled: true
+    url: jdbc:postgresql://localhost:5432/userservice
+    user: root
+    password: password
+    driver-class-name: org.postgresql.Driver
+    baseline-on-migrate: true

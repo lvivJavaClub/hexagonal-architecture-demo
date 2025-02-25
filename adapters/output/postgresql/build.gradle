@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation(project(":model"))
+    implementation(project(":application"))
+
+    implementation(libs.springboot.starter.actuator)
+    
+    implementation(libs.springboot.starter.data.jpa)
+    implementation(libs.flyway.core)
+    implementation(libs.postgresql.connector)
+    
+    compileOnly(libs.lombok)
+    annotationProcessor(libs.lombok)
+
+    testCompileOnly(libs.lombok)
+    testAnnotationProcessor(libs.lombok)
+}

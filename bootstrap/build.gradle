@@ -1,0 +1,20 @@
+plugins {
+  id 'java'
+}
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+
+  
+  implementation(project(":adapters:input:rest"))
+//  implementation(project(":adapters:input:kafka"))
+  implementation(project(":service"))
+//  implementation(project(":adapters:output:postgresql"))
+  implementation(project(":adapters:output:mongo"))
+
+  implementation(libs.springboot.starter.actuator)
+  implementation(libs.springboot.starter)
+}

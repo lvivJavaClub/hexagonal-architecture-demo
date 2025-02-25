@@ -1,0 +1,23 @@
+rootProject.name = 'hexagonal-architecture-demo'
+include 'model'
+include 'application'
+include 'adapter'
+include 'bootstrap'
+
+include 'adapters'
+include 'adapters:input'
+findProject(':adapters:input')?.name = 'input'
+
+include 'adapters:input:rest'
+findProject(':adapters:input:rest')?.name = 'rest'
+include 'adapters:input:kafka'
+findProject(':adapters:input:kafka')?.name = 'kafka'
+
+include 'adapters:output'
+findProject(':adapters:output')?.name = 'output'
+include 'adapters:output:postgresql'
+findProject(':adapters:output:postgresql')?.name = 'postgresql'
+include 'service'
+include 'adapters:output:mongo'
+findProject(':adapters:output:mongo')?.name = 'mongo'
+

@@ -1,0 +1,9 @@
+POST http://127.0.0.1:8081/api/users
+Content-Type: application/json
+Accept: application/json
+
+{
+  "user-name": "john doe",
+  "user-email": "johndoe@example.com"
+}
+
