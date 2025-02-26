@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8080
   servlet:
     context-path: /api
 
@@ -25,6 +25,18 @@ spring:
     password: password
     driver-class-name: org.postgresql.Driver
     baseline-on-migrate: true
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: my-group
+      auto-offset-reset: earliest
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+    topics:
+      user-topic: user-topic
+  logging:
+    level:
+      org.springframework.kafka: DEBUG
+      org.apache.kafka: DEBUG
 
 management:
   endpoints:

@@ -13,13 +13,13 @@ public class UserEntityToUserMapper implements Function<MongoUserEntity, User> {
 
   @NonNull
   @Override
-  public User apply(@NonNull final MongoUserEntity userEntity) {
+  public User apply(@NonNull final MongoUserEntity mongoUserEntity) {
     return User.builder()
-        .id(userEntity.getId())
-        .name(userEntity.getName())
-        .email(userEntity.getEmail())
-        .status(userEntity.getStatus())
-        .createdAt(userEntity.getCreatedAt())
+        .id(mongoUserEntity.getId())
+        .name(mongoUserEntity.getName())
+        .email(mongoUserEntity.getEmail())
+        .status(mongoUserEntity.getStatus())
+        .createdAt(mongoUserEntity.getCreatedAt())
         .build();
   }
 }

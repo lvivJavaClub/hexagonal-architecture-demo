@@ -12,7 +12,9 @@ repositories {
 dependencies {
     implementation(project(":model"))
     implementation(project(":application"))
-
+    
+    implementation(libs.springboot.starter.actuator)
+    
     implementation(libs.spring.kafka)
 
     compileOnly(libs.lombok)

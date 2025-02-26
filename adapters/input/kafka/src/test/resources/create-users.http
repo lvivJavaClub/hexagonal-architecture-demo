@@ -1,0 +1,9 @@
+POST http://localhost:8082/topics/user-topic
+Content-Type: application/vnd.kafka.json.v2+json
+Accept: application/vnd.kafka.v2+json
+
+{
+  "records": [
+    { "value": { "firstName": "John", "middleName": "M.", "lastName": "Doe101", "email": "johndoe101@example.com" } }
+  ]
+}
